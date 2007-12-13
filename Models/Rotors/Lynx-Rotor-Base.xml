@@ -1,0 +1,102 @@
+<PropertyList>
+
+
+    <!--
+    Usable with FlightGear
+    Property of Gerard Robin
+    Copyright License:  GPL
+    -->
+    <!--                   Auteur :      Gerard ROBIN            GPL  COPYRIGHT-->
+	<path>Models/lynx-rotor-pale-base.ac</path>
+	<texture-path>Models/Textures</texture-path>
+        <offsets>
+            <heading-deg>0</heading-deg>
+        </offsets>
+
+       <animation>
+              <!--  <condition>
+                    <equals>
+                        <property>sim/current-view/view-number</property>
+                        <value>999</value>
+                    </equals>
+            </condition>-->
+		<type>select</type>
+                <object-name>Gabarit-Pose</object-name>
+ 	</animation>
+
+        <!--ALPHA HIERARCHY=================-->
+        <animation>
+                <name>Alpha</name>
+                <object-name>Rotor-Tete</object-name>
+                <object-name>Rotor-PaleD1</object-name>
+		<object-name>Rotor-PaleD2</object-name>
+		<object-name>Rotor-PaleD3</object-name>
+		<object-name>Rotor-PaleD4</object-name>
+                <object-name>Rotor-Pale-Base</object-name>
+                <object-name>Rotor-Pale-Fix</object-name>
+                <!--<object-name>Rotor-Disc_M-Pale</object-name>-->
+        </animation>
+
+	<animation>
+		<condition>
+			<greater-than>
+				<property>rotors/main/rpm</property>
+				<value>160</value>
+			</greater-than>
+		</condition>
+		<type>noshadow</type>
+                <object-name>Rotor-PaleD1</object-name>
+		<object-name>Rotor-PaleD2</object-name>
+		<object-name>Rotor-PaleD3</object-name>
+		<object-name>Rotor-PaleD4</object-name>
+ 	</animation>
+
+        <animation>
+		<type>noshadow</type>
+		<object-name>Rotor-FlouD0</object-name>
+                <object-name>Rotor-FlouD1</object-name>
+		<object-name>Rotor-FlouD2</object-name>
+		<object-name>Rotor-FlouD3</object-name>
+		<object-name>Rotor-FlouD4</object-name>
+ 	</animation>
+
+
+        <!--BLEND===================-->
+
+
+
+         <animation>
+		<type>blend</type>
+                <object-name>Rotor-PaleD1</object-name>
+		<object-name>Rotor-PaleD2</object-name>
+		<object-name>Rotor-PaleD3</object-name>
+		<object-name>Rotor-PaleD4</object-name>
+		<property>rotors/main/rpm</property>
+		<factor>0.0027</factor>
+	</animation>
+
+        <animation>
+		<type>blend</type>
+                <object-name>Rotor-Pale-Base</object-name>
+                <object-name>Rotor-Pale-Fix</object-name>
+		<property>rotors/main/rpm</property>
+		<factor>0.0025</factor>
+	</animation>
+
+        <!--NOSHADOW=====================-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</PropertyList>
