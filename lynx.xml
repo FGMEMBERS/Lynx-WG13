@@ -115,7 +115,7 @@
 </rotor>
 
 
-<rotor name="tail" x="-7.64" y="0.38" z="1.37" nx="0.07" ny="-1" nz="-0.05" fx="1" fy="0" fz="0" ccw="1"
+<rotor name="tail" x="-7.64" y="0.38" z="1.37" nx="0.0" ny="-1" nz="0.0" fx="1" fy="0" fz="0" ccw="1"
   maxcollective="20" mincollective="-10"
   phi0="110"
   diameter="2.36" numblades="4" weightperblade="2.5" relbladecenter="0.7"
@@ -191,15 +191,28 @@
 
 
 <!-- left -->
-<gear x="-0.90" y="+1.40" z="-1.47" compression="0.30" spring="12" sfric="1" dfric="0.4">
+<gear x="-0.90" y="+1.40" z="-1.47" compression="0.35" spring="12" sfric="1" dfric="0.4">
 <control-input axis="/controls/gear/brake-left" control="BRAKE" split="true"/>
 <control-input axis="/controls/gear/brake-parking" control="BRAKE" split="true"/>
 </gear>
 
 <!-- right -->
-<gear x="-0.90" y="-1.40" z="-1.47" compression="0.30" spring="12" sfric="1" dfric="0.4">
+<gear x="-0.90" y="-1.40" z="-1.47" compression="0.35" spring="12" sfric="1" dfric="0.4">
 <control-input axis="/controls/gear/brake-right" control="BRAKE" split="true"/>
 <control-input axis="/controls/gear/brake-parking" control="BRAKE" split="true"/>
+</gear>
+
+<!-- nose -->
+<gear x="1.78" y="+0.00" z="-1.50" compression="0.35" spring="10" sfric="1" dfric="0.4"/>
+
+<!-- tail skid -->
+<gear x="-7.032" y="+0.00" z="-0.48" skid="1" compression="0.01" spring="0.1" sfric="1" dfric="1"/>
+
+<!-- Left Door -->
+<gear x="0" y="0" z="0" retract-time="4" compression="0">
+<control-input axis="/controls/doors/left-door" control="EXTEND"/>
+<control-speed control="EXTEND" transition-time="4"/>
+<control-output control="EXTEND" prop="/surface-positions/left-door-position"/>
 </gear>
 
 <!-- Right Door -->
@@ -209,19 +222,6 @@
 <control-output control="EXTEND" prop="/surface-positions/right-door-position"/>
 </gear>
 
-<!-- Left Door -->
-<gear x="0" y="0" z="0" retract-time="4" compression="0">
-<control-input axis="/controls/doors/left-door" control="EXTEND"/>
-<control-speed control="EXTEND" transition-time="4"/>
-<control-output control="EXTEND" prop="/surface-positions/left-door-position"/>
-</gear>
-
-
-<!-- nose -->
-<gear x="1.78" y="+0.00" z="-1.50" compression="0.22" spring="10" sfric="1" dfric="0.4"/>
-
-<!-- tail skid -->
-<gear x="-7.032" y="+0.00" z="-0.48" skid="1" compression="0.01" spring="0.1" sfric="1" dfric="1"/>
 
 
 
