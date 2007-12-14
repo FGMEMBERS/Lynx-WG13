@@ -11,20 +11,11 @@
 
 	<offsets>
             <pitch-deg>0</pitch-deg>
-            <z-m>0.08</z-m>
+            <z-m>0.05</z-m>
             <x-m>0</x-m>
         </offsets>
 
-	<animation>
-            <type>select</type>
-            <object-name>Pilote</object-name>
-            <condition>
-                        <not-equals>
-                            <property>sim/current-view/view-number</property>
-                            <value>0</value>
-                        </not-equals>
-            </condition>
-        </animation>
+
 
 
 
@@ -76,12 +67,28 @@
 
 	<animation>
 		<name>Alpha-Sequence</name>
+		<object-name>Co-Pilote</object-name>
+		<object-name>Pilote</object-name>
+		<object-name>AR-DPorte-Vitrage</object-name>
+		<object-name>AR-GPorte-Vitrage</object-name>
+		<object-name>Vitrage</object-name>
 		<object-name>Rotor-Pale0</object-name>
 		<object-name>Rotor-Pale1</object-name>
 		<object-name>Rotor-Pale2</object-name>
 		<object-name>Rotor-Pale3</object-name>
 		<object-name>Queue-Disc_M</object-name>
 	</animation>
+
+	<animation>
+            <type>select</type>
+            <object-name>Pilote</object-name>
+            <condition>
+                        <not-equals>
+                            <property>sim/current-view/view-number</property>
+                            <value>0</value>
+                        </not-equals>
+            </condition>
+        </animation>
 
 
 
@@ -269,19 +276,19 @@
                     </entry>
 		    <entry>
                     <ind>0.250</ind>
-                    <dep>0.037</dep>
+                    <dep>0.051</dep>
                     </entry>
 		    <entry>
                     <ind>0.50</ind>
-                    <dep>0.075</dep>
+                    <dep>0.102</dep>
                     </entry>
 		    <entry>
                     <ind>0.750</ind>
-                    <dep>0.112</dep>
+                    <dep>0.153</dep>
                     </entry>
 		    <entry>
                     <ind>1</ind>
-                    <dep>0.15</dep>
+                    <dep>0.23</dep>
                     </entry>
             </interpolation>
             <axis>
@@ -451,19 +458,19 @@
                     </entry>
 		    <entry>
                     <ind>0.250</ind>
-                    <dep>0.037</dep>
+                    <dep>0.051</dep>
                     </entry>
 		    <entry>
                     <ind>0.50</ind>
-                    <dep>0.075</dep>
+                    <dep>0.102</dep>
                     </entry>
 		    <entry>
                     <ind>0.750</ind>
-                    <dep>0.112</dep>
+                    <dep>0.153</dep>
                     </entry>
 		    <entry>
                     <ind>1</ind>
-                    <dep>0.15</dep>
+                    <dep>0.23</dep>
                     </entry>
             </interpolation>
             <axis>
@@ -634,19 +641,19 @@
                     </entry>
 		    <entry>
                     <ind>0.250</ind>
-                    <dep>0.037</dep>
+                    <dep>0.051</dep>
                     </entry>
 		    <entry>
                     <ind>0.50</ind>
-                    <dep>0.075</dep>
+                    <dep>0.102</dep>
                     </entry>
 		    <entry>
                     <ind>0.750</ind>
-                    <dep>0.112</dep>
+                    <dep>0.153</dep>
                     </entry>
 		    <entry>
                     <ind>1</ind>
-                    <dep>0.15</dep>
+                    <dep>0.23</dep>
                     </entry>
             </interpolation>
             <axis>

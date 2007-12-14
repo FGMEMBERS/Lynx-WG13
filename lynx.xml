@@ -84,7 +84,7 @@
   ground-effect-constant="0.1"
   twist="-8.5"
   taper="1"
-  chord="0.37"
+  chord="0.34"
   number-of-segments="8"
   number-of-parts="8"
   rel-len-where-incidence-is-measured="0.7"
@@ -171,10 +171,10 @@
 <cockpit x="2" y=".45" z="0"/>
 
 <fuselage ax="4.3" ay="0" az="0" bx="-3.35" by="0" bz="0"
-          width="2.1" taper="2" midpoint="0.5" idrag="0" cx="0.35" cy="0.7" cz="0.7"/>
+          width="2.1" taper="1" midpoint="0.5" idrag="0" cx="0.35" cy="0.7" cz="0.7"/>
 
 <fuselage ax="-3.35" ay="0" az="-0.28" bx="-7.60" by="0" bz=".0.62"
-          width="0.40" taper="0.9" midpoint="0.5" idrag="0" cx="0.20" cy="0.4" cz="0.4"/>
+          width="0.40" taper="1" midpoint="0.5" idrag="0" cx="0.20" cy="0.4" cz="0.4"/>
 
 
 
