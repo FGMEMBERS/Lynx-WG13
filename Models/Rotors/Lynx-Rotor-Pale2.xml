@@ -16,13 +16,13 @@
 
 	<params>
 		<flapD0>
-			<factor>0.45</factor>
+			<factor>0.15</factor>
 		</flapD0>
 		<flapD1>
-			<factor>0.25</factor>
+			<factor>0.45</factor>
 		</flapD1>
 		<flapD2>
-			<factor>0.15</factor>
+			<factor>0.25</factor>
 		</flapD2>
 		<flapD3>
 			<factor>0.10</factor>

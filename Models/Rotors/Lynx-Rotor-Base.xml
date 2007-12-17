@@ -34,6 +34,11 @@
 		<object-name>Rotor-PaleD4</object-name>
                 <object-name>Rotor-Pale-Base</object-name>
                 <object-name>Rotor-Pale-Fix</object-name>
+		<object-name>Rotor-FlouD0</object-name>
+                <object-name>Rotor-FlouD1</object-name>
+		<object-name>Rotor-FlouD2</object-name>
+		<object-name>Rotor-FlouD3</object-name>
+		<object-name>Rotor-FlouD4</object-name>
                 <!--<object-name>Rotor-Disc_M-Pale</object-name>-->
         </animation>
 
@@ -72,7 +77,7 @@
 		<object-name>Rotor-PaleD3</object-name>
 		<object-name>Rotor-PaleD4</object-name>
 		<property>rotors/main/rpm</property>
-		<factor>0.0027</factor>
+		<factor>0.0042</factor>
 	</animation>
 
         <animation>
@@ -80,7 +85,7 @@
                 <object-name>Rotor-Pale-Base</object-name>
                 <object-name>Rotor-Pale-Fix</object-name>
 		<property>rotors/main/rpm</property>
-		<factor>0.0025</factor>
+		<factor>0.0085</factor>
 	</animation>
 
         <!--NOSHADOW=====================-->
