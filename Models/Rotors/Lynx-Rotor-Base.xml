@@ -42,6 +42,33 @@
                 <!--<object-name>Rotor-Disc_M-Pale</object-name>-->
         </animation>
 
+
+
+
+        <!--BLEND===================-->
+
+
+
+         <animation>
+		<type>blend</type>
+                <object-name>Rotor-PaleD1</object-name>
+		<object-name>Rotor-PaleD2</object-name>
+		<object-name>Rotor-PaleD3</object-name>
+		<object-name>Rotor-PaleD4</object-name>
+		<property>rotors/main/rpm</property>
+		<factor>0.0042</factor>
+	</animation>
+
+        <animation>
+		<type>blend</type>
+                <object-name>Rotor-Pale-Base</object-name>
+                <object-name>Rotor-Pale-Fix</object-name>
+		<property>rotors/main/rpm</property>
+		<factor>0.0025</factor>
+	</animation>
+
+        <!--NOSHADOW=====================-->
+
 	<animation>
 		<condition>
 			<greater-than>
@@ -64,33 +91,6 @@
 		<object-name>Rotor-FlouD3</object-name>
 		<object-name>Rotor-FlouD4</object-name>
  	</animation>
-
-
-        <!--BLEND===================-->
-
-
-
-         <animation>
-		<type>blend</type>
-                <object-name>Rotor-PaleD1</object-name>
-		<object-name>Rotor-PaleD2</object-name>
-		<object-name>Rotor-PaleD3</object-name>
-		<object-name>Rotor-PaleD4</object-name>
-		<property>rotors/main/rpm</property>
-		<factor>0.0042</factor>
-	</animation>
-
-        <animation>
-		<type>blend</type>
-                <object-name>Rotor-Pale-Base</object-name>
-                <object-name>Rotor-Pale-Fix</object-name>
-		<property>rotors/main/rpm</property>
-		<factor>0.0085</factor>
-	</animation>
-
-        <!--NOSHADOW=====================-->
-
-
 
 
 

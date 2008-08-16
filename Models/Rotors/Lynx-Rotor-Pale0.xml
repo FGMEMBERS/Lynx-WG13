@@ -70,9 +70,9 @@
 		<type>select</type>
                 <object-name>Rotor-FlouD0</object-name>
 		<object-name>Rotor-FlouD1</object-name>
-		<object-name>Rotor-FlouD1</object-name>
-		<object-name>Rotor-FlouD1</object-name>
-		<object-name>Rotor-FlouD1</object-name>
+		<object-name>Rotor-FlouD2</object-name>
+		<object-name>Rotor-FlouD3</object-name>
+		<object-name>Rotor-FlouD4</object-name>
  	</animation>
 
 
