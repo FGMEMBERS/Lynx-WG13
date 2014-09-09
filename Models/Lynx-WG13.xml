@@ -1,0 +1,832 @@
+<?xml version="1.0"?>
+<!--
+    Usable with FlightGear
+    Property of Gerard Robin
+    Copyright License:  GPL
+-->
+<PropertyList>
+
+	<path>lynx.ac</path>
+	<texture-path>Textures</texture-path>
+
+	<offsets>
+            <pitch-deg>0</pitch-deg>
+            <z-m>0.05</z-m>
+            <x-m>0</x-m>
+        </offsets>
+
+
+
+
+
+
+
+        <model>
+            <name>Rotor-Pale0</name>
+            <path>Aircraft/Lynx-WG13/Models/Rotors/Lynx-Rotor-Pale0.xml</path>
+            <offsets>
+                    <x-m>-0.01067</x-m>
+                    <y-m>0</y-m>
+                    <z-m>1.5114</z-m>
+                    <pitch-deg>-5</pitch-deg>
+            </offsets>
+        </model>
+
+	<model>
+            <name>Rotor-Pale1</name>
+            <path>Aircraft/Lynx-WG13/Models/Rotors/Lynx-Rotor-Pale1.xml</path>
+            <offsets>
+                    <x-m>-0.01067</x-m>
+                    <y-m>0</y-m>
+                    <z-m>1.5114</z-m>
+                    <pitch-deg>-5</pitch-deg>
+            </offsets>
+        </model>
+
+	<model>
+            <name>Rotor-Pale2</name>
+            <path>Aircraft/Lynx-WG13/Models/Rotors/Lynx-Rotor-Pale2.xml</path>
+            <offsets>
+                    <x-m>-0.01067</x-m>
+                    <y-m>0</y-m>
+                    <z-m>1.5114</z-m>
+                    <pitch-deg>-5</pitch-deg>
+            </offsets>
+        </model>
+
+	<model>
+            <name>Rotor-Pale3</name>
+            <path>Aircraft/Lynx-WG13/Models/Rotors/Lynx-Rotor-Pale3.xml</path>
+            <offsets>
+                    <x-m>-0.01067</x-m>
+                    <y-m>0</y-m>
+                    <z-m>1.5114</z-m>
+                    <pitch-deg>-5</pitch-deg>
+            </offsets>
+        </model>
+
+	<animation>
+		<name>Alpha-Sequence</name>
+		<object-name>Co-Pilote</object-name>
+		<object-name>Pilote</object-name>
+		<object-name>AR-DPorte-Vitrage</object-name>
+		<object-name>AR-GPorte-Vitrage</object-name>
+		<object-name>Vitrage</object-name>
+		<object-name>Rotor-Pale0</object-name>
+		<object-name>Rotor-Pale1</object-name>
+		<object-name>Rotor-Pale2</object-name>
+		<object-name>Rotor-Pale3</object-name>
+		<object-name>Rotor-Pales-Queue</object-name>
+		<object-name>Queue-Disc_M</object-name>
+	</animation>
+
+	<animation>
+            <type>select</type>
+            <object-name>Pilote</object-name>
+            <condition>
+                        <not-equals>
+                            <property>sim/current-view/view-number</property>
+                            <value>0</value>
+                        </not-equals>
+            </condition>
+        </animation>
+
+
+
+        <animation>
+            <type>select</type>
+            <object-name>Queue-Disc_M</object-name>
+            <condition>
+                <not>
+                    <equals>
+                        <property>sim/current-view/view-number</property>
+                        <value>0</value>
+                    </equals>
+                </not>
+            </condition>
+        </animation>
+
+        <animation>
+            <type>select</type>
+            <object-name>Rotor-Pales-Queue</object-name>
+            <condition>
+                <not>
+                    <equals>
+                        <property>sim/current-view/view-number</property>
+                        <value>0</value>
+                    </equals>
+                </not>
+            </condition>
+        </animation>
+
+
+
+
+
+	<animation>
+		<condition>
+			<greater-than>
+				<property>rotors/tail/rpm</property>
+				<value>1100</value>
+			</greater-than>
+		</condition>
+		<type>noshadow</type>
+		<object-name>Rotor-Pales-Queue</object-name>
+		<!--<object-name>Rotor-Queue-Tete</object-name>-->
+ 	</animation>
+
+
+	<animation>
+		<type>blend</type>
+		<object-name>Rotor-Pales-Queue</object-name>
+		<!--<object-name>Rotor-Queue-Tete</object-name>-->
+		<property>rotors/tail/rpm</property>
+		<offset>-0.2</offset>
+		<factor>0.0009</factor>
+		<min>0.10</min>
+	</animation>
+
+
+
+	<animation>
+		<type>rotate</type>
+		<object-name>Rotor-Pales-Queue</object-name>
+                <!--<object-name>Rotor-Queue-Tete</object-name>-->
+		<property>rotors/tail/blade[1]/position-deg</property>
+		<center>
+			<x-m>7.62351</x-m>
+			<y-m>0</y-m>
+			<z-m>1.37309</z-m>
+		</center>
+		<axis>
+			<x>0</x>
+			<y>-1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+	<animation>
+  		<type>select</type>
+  		<object-name>Queue-Disc_M</object-name>
+  			<condition>
+   				<greater-than>
+    			<property>/rotors/tail/rpm</property>
+    			<value>100</value>
+   				</greater-than>
+  			</condition>
+ 	</animation>
+
+
+
+
+	<animation>
+		<type>blend</type>
+		<object-name>Queue-Disc_M</object-name>
+		<property>rotors/tail/rpm</property>
+		<offset>1.2</offset>
+		<factor>-0.0005</factor>
+		<max>0.15</max>
+	</animation>
+
+
+
+	<animation>
+		<type>rotate</type>
+		<object-name>Queue-Disc_M</object-name>
+		<property>rotors/tail/blade[1]/position-deg</property>
+		<center>
+			<x-m>7.62351</x-m>
+			<y-m>0</y-m>
+			<z-m>1.37309</z-m>
+		</center>
+		<axis>
+			<x>0</x>
+			<y>-1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+
+
+	<!--       ======   Doors Open/Close==========-->
+
+
+
+
+	<animation>
+        <type>rotate</type>
+	<object-name>AR-GPorte</object-name>
+        <object-name>AR-GPorte-Doublage</object-name>
+        <object-name>AR-GPorte-Vitrage</object-name>
+        <property>surface-positions/left-door-position</property>
+        <factor>4.5</factor>
+        	<center>
+			<x-m>-1.01714</x-m>
+			<y-m>16.3654</y-m>
+			<z-m>0</z-m>
+		</center>
+		<axis>
+			<x>0.0</x>
+			<y>0</y>
+			<z>1</z>
+		</axis>
+ 	</animation>
+
+
+	<animation>
+        <type>rotate</type>
+	<object-name>AR-DPorte</object-name>
+        <object-name>AR-DPorte-Doublage</object-name>
+        <object-name>AR-DPorte-Vitrage</object-name>
+        <property>surface-positions/right-door-position</property>
+        <factor>4.5</factor>
+        	<center>
+			<x-m>-1.01714</x-m>
+			<y-m>-16.3654</y-m>
+			<z-m>0</z-m>
+		</center>
+		<axis>
+			<x>0.0</x>
+			<y>0</y>
+			<z>-1</z>
+		</axis>
+ 	</animation>
+
+	<!--================TRAIN AVANT===================-->
+	<!--equivalence compression/extension angle (tangente) sur course compression  .0  => 0.5   et angle 0 => 90 -->
+
+	<!--
+	<ind>0</ind> <dep>0</dep>
+	<ind>0.044</ind> <dep>5</dep>
+	<ind>0.087</ind> <dep>10</dep>
+	<ind>0.129</ind> <dep>15</dep>
+	<ind>0.171</ind> <dep>20</dep>
+	<ind>0.211</ind> <dep>25</dep>
+	<ind>0.250</ind> <dep>30</dep>
+	<ind>0.287</ind> <dep>35</dep>
+	<ind>0.321</ind> <dep>40</dep>
+	<ind>0.354</ind> <dep>45</dep>
+	<ind>0.383</ind> <dep>50</dep>
+	<ind>0.433</ind> <dep>60</dep>
+	<ind>0.470</ind> <dep>70</dep>
+	<ind>0.482</ind> <dep>80</dep>
+	<ind>0.500</ind> <dep>90</dep>
+	-->
+
+
+        <animation>
+            <type>translate</type>
+            <object-name>AVTrain-Roue</object-name>
+            <property>gear/gear[2]/compression-norm</property>
+            <interpolation>
+                    <entry>
+                    <ind>0.0</ind>
+                    <dep>-0.12</dep>
+                    </entry>
+		    <entry>
+                    <ind>0.17</ind>
+                    <dep>0.00</dep>
+                    </entry>
+		    <entry>
+                    <ind>0.250</ind>
+                    <dep>0.051</dep>
+                    </entry>
+		    <entry>
+                    <ind>0.50</ind>
+                    <dep>0.102</dep>
+                    </entry>
+		    <entry>
+                    <ind>0.750</ind>
+                    <dep>0.153</dep>
+                    </entry>
+		    <entry>
+                    <ind>1</ind>
+                    <dep>0.23</dep>
+                    </entry>
+            </interpolation>
+            <axis>
+              <x>0</x>
+              <y>0</y>
+              <z>1</z>
+            </axis>
+        </animation>
+
+        <animation>
+            <type>translate</type>
+            <object-name>AVTrain-JambeMobile</object-name>
+            <property>gear/gear[2]/compression-norm</property>
+            <interpolation>
+                    <entry>
+                    <ind>0.0</ind>
+                    <dep>-0.12</dep>
+                    </entry>
+		    <entry>
+                    <ind>0.17</ind>
+                    <dep>0.00</dep>
+                    </entry>
+		    <entry>
+                    <ind>0.250</ind>
+                    <dep>0.051</dep>
+                    </entry>
+		    <entry>
+                    <ind>0.50</ind>
+                    <dep>0.102</dep>
+		    </entry>
+		    <entry>
+                    <ind>0.750</ind>
+                    <dep>0.153</dep>
+                    </entry>
+		    <entry>
+                    <ind>1</ind>
+                    <dep>0.23</dep>
+                    </entry>
+            </interpolation>
+            <axis>
+              <x>0</x>
+              <y>0</y>
+              <z>1</z>
+            </axis>
+        </animation>
+
+
+	<!--
+	<ind>0</ind> <dep>0</dep>
+	<ind>0.044</ind> <dep>5</dep>
+	<ind>0.087</ind> <dep>10</dep>
+	<ind>0.129</ind> <dep>15</dep>
+	<ind>0.171</ind> <dep>20</dep>
+	<ind>0.211</ind> <dep>25</dep>
+	<ind>0.250</ind> <dep>30</dep>
+	<ind>0.287</ind> <dep>35</dep>
+	<ind>0.321</ind> <dep>40</dep>
+	<ind>0.354</ind> <dep>45</dep>
+	<ind>0.383</ind> <dep>50</dep>
+	<ind>0.433</ind> <dep>60</dep>
+	<ind>0.470</ind> <dep>70</dep>
+	<ind>0.482</ind> <dep>80</dep>
+	<ind>0.500</ind> <dep>90</dep>
+	-->
+
+
+<!--Course 0.35  compression max -0.12 min +0.23-->
+        <animation>
+            <type>rotate</type>
+            <object-name>AVTrain-BielleSup</object-name>
+            <object-name>AVTrain-BielleInf</object-name>
+            <property>gear/gear[2]/compression-norm</property>
+	    <interpolation>
+                    <entry>
+                    <ind>0.0</ind>
+                    <dep>-13</dep>
+                    </entry>
+		    <entry>
+                    <ind>0.17</ind>
+                    <dep>0.00</dep>
+                    </entry>
+		    <entry>
+                    <ind>0.250</ind>
+                    <dep>12</dep>
+                    </entry>
+		    <entry>
+                    <ind>0.50</ind>
+                    <dep>24</dep>
+		    </entry>
+		    <entry>
+                    <ind>0.750</ind>
+                    <dep>34</dep>
+                    </entry>
+		    <entry>
+                    <ind>1</ind>
+                    <dep>45</dep>
+                    </entry>
+            </interpolation>
+            <center>
+                    <x-m>-1.71076</x-m>
+                    <y-m>0</y-m>
+                    <z-m>-1.12133</z-m>
+		</center>
+            <axis>
+                  <x>0</x>
+                  <y>-1</y>
+                  <z>0</z>
+            </axis>
+        </animation>
+
+        <animation>
+            <type>rotate</type>
+            <object-name>AVTrain-BielleInf</object-name>
+            <property>gear/gear[2]/compression-norm</property>
+            <interpolation>
+                    <entry>
+                    <ind>0.0</ind>
+                    <dep>26</dep>
+                    </entry>
+		    <entry>
+                    <ind>0.17</ind>
+                    <dep>0.00</dep>
+                    </entry>
+		    <entry>
+                    <ind>0.250</ind>
+                    <dep>-24</dep>
+                    </entry>
+		    <entry>
+                    <ind>0.50</ind>
+                    <dep>-48</dep>
+		    </entry>
+		    <entry>
+                    <ind>0.750</ind>
+                    <dep>-68</dep>
+                    </entry>
+		    <entry>
+                    <ind>1</ind>
+                    <dep>-90</dep>
+                    </entry>
+            </interpolation>
+            <center>
+                    <x-m>-1.51197</x-m>
+                    <y-m>0</y-m>
+                    <z-m>-1.22643</z-m>
+		</center>
+            <axis>
+                  <x>0</x>
+                  <y>-1</y>
+                  <z>0</z>
+            </axis>
+        </animation>
+
+	<!--============TRAIN ARRIERE GAUCHE=========================-->
+
+	<animation>
+            <type>translate</type>
+            <object-name>ARGTrain-Roue</object-name>
+            <property>gear/gear[0]/compression-norm</property>
+            <interpolation>
+                    <entry>
+                    <ind>0.0</ind>
+                    <dep>-0.12</dep>
+                    </entry>
+		    <entry>
+                    <ind>0.17</ind>
+                    <dep>0.00</dep>
+                    </entry>
+		    <entry>
+                    <ind>0.250</ind>
+                    <dep>0.051</dep>
+                    </entry>
+		    <entry>
+                    <ind>0.50</ind>
+                    <dep>0.102</dep>
+                    </entry>
+		    <entry>
+                    <ind>0.750</ind>
+                    <dep>0.153</dep>
+                    </entry>
+		    <entry>
+                    <ind>1</ind>
+                    <dep>0.23</dep>
+                    </entry>
+            </interpolation>
+            <axis>
+              <x>0</x>
+              <y>0</y>
+              <z>1</z>
+            </axis>
+        </animation>
+
+        <animation>
+            <type>translate</type>
+            <object-name>ARGTrain-JambeMobile</object-name>
+            <property>gear/gear[0]/compression-norm</property>
+            <interpolation>
+                    <entry>
+                    <ind>0.0</ind>
+                    <dep>-0.12</dep>
+                    </entry>
+		    <entry>
+                    <ind>0.17</ind>
+                    <dep>0.00</dep>
+                    </entry>
+		    <entry>
+                    <ind>0.250</ind>
+                    <dep>0.051</dep>
+                    </entry>
+		    <entry>
+                    <ind>0.50</ind>
+                    <dep>0.102</dep>
+		    </entry>
+		    <entry>
+                    <ind>0.750</ind>
+                    <dep>0.153</dep>
+                    </entry>
+		    <entry>
+                    <ind>1</ind>
+                    <dep>0.23</dep>
+                    </entry>
+            </interpolation>
+            <axis>
+              <x>0</x>
+              <y>0</y>
+              <z>1</z>
+            </axis>
+        </animation>
+
+
+	<!--
+	<ind>0</ind> <dep>0</dep>
+	<ind>0.044</ind> <dep>5</dep>
+	<ind>0.087</ind> <dep>10</dep>
+	<ind>0.129</ind> <dep>15</dep>
+	<ind>0.171</ind> <dep>20</dep>
+	<ind>0.211</ind> <dep>25</dep>
+	<ind>0.250</ind> <dep>30</dep>
+	<ind>0.287</ind> <dep>35</dep>
+	<ind>0.321</ind> <dep>40</dep>
+	<ind>0.354</ind> <dep>45</dep>
+	<ind>0.383</ind> <dep>50</dep>
+	<ind>0.433</ind> <dep>60</dep>
+	<ind>0.470</ind> <dep>70</dep>
+	<ind>0.482</ind> <dep>80</dep>
+	<ind>0.500</ind> <dep>90</dep>
+	-->
+
+
+<!--Course 0.35  compression max -0.12 min +0.23-->
+        <animation>
+            <type>rotate</type>
+            <object-name>ARGTrain-BielleSup</object-name>
+            <object-name>ARGTrain-BielleInf</object-name>
+            <property>gear/gear[0]/compression-norm</property>
+	    <interpolation>
+                    <entry>
+                    <ind>0.0</ind>
+                    <dep>-13</dep>
+                    </entry>
+		    <entry>
+                    <ind>0.17</ind>
+                    <dep>0.00</dep>
+                    </entry>
+		    <entry>
+                    <ind>0.250</ind>
+                    <dep>12</dep>
+                    </entry>
+		    <entry>
+                    <ind>0.50</ind>
+                    <dep>24</dep>
+		    </entry>
+		    <entry>
+                    <ind>0.750</ind>
+                    <dep>34</dep>
+                    </entry>
+		    <entry>
+                    <ind>1</ind>
+                    <dep>45</dep>
+                    </entry>
+            </interpolation>
+            <center>
+                    <x-m>1.17699</x-m>
+                    <y-m>0</y-m>
+                    <z-m>-1.00412</z-m>
+		</center>
+            <axis>
+                  <x>0</x>
+                  <y>-1</y>
+                  <z>0</z>
+            </axis>
+        </animation>
+
+        <animation>
+            <type>rotate</type>
+            <object-name>ARGTrain-BielleInf</object-name>
+            <property>gear/gear[0]/compression-norm</property>
+            <interpolation>
+                    <entry>
+                    <ind>0.0</ind>
+                    <dep>26</dep>
+                    </entry>
+		    <entry>
+                    <ind>0.17</ind>
+                    <dep>0.00</dep>
+                    </entry>
+		    <entry>
+                    <ind>0.250</ind>
+                    <dep>-24</dep>
+                    </entry>
+		    <entry>
+                    <ind>0.50</ind>
+                    <dep>-48</dep>
+		    </entry>
+		    <entry>
+                    <ind>0.750</ind>
+                    <dep>-68</dep>
+                    </entry>
+		    <entry>
+                    <ind>1</ind>
+                    <dep>-90</dep>
+                    </entry>
+            </interpolation>
+            <center>
+                    <x-m>1.37578</x-m>
+                    <y-m>0</y-m>
+                    <z-m>-1.10922</z-m>
+		</center>
+            <axis>
+                  <x>0</x>
+                  <y>-1</y>
+                  <z>0</z>
+            </axis>
+        </animation>
+
+
+	<!--============TRAIN ARRIERE GAUCHE=========================-->
+
+	<animation>
+            <type>translate</type>
+            <object-name>ARDTrain-Roue</object-name>
+            <property>gear/gear[1]/compression-norm</property>
+            <interpolation>
+                    <entry>
+                    <ind>0.0</ind>
+                    <dep>-0.12</dep>
+                    </entry>
+		    <entry>
+                    <ind>0.17</ind>
+                    <dep>0.00</dep>
+                    </entry>
+		    <entry>
+                    <ind>0.250</ind>
+                    <dep>0.051</dep>
+                    </entry>
+		    <entry>
+                    <ind>0.50</ind>
+                    <dep>0.102</dep>
+                    </entry>
+		    <entry>
+                    <ind>0.750</ind>
+                    <dep>0.153</dep>
+                    </entry>
+		    <entry>
+                    <ind>1</ind>
+                    <dep>0.23</dep>
+                    </entry>
+            </interpolation>
+            <axis>
+              <x>0</x>
+              <y>0</y>
+              <z>1</z>
+            </axis>
+        </animation>
+
+        <animation>
+            <type>translate</type>
+            <object-name>ARDTrain-JambeMobile</object-name>
+            <property>gear/gear[1]/compression-norm</property>
+            <interpolation>
+                    <entry>
+                    <ind>0.0</ind>
+                    <dep>-0.12</dep>
+                    </entry>
+		    <entry>
+                    <ind>0.17</ind>
+                    <dep>0.00</dep>
+                    </entry>
+		    <entry>
+                    <ind>0.250</ind>
+                    <dep>0.051</dep>
+                    </entry>
+		    <entry>
+                    <ind>0.50</ind>
+                    <dep>0.102</dep>
+		    </entry>
+		    <entry>
+                    <ind>0.750</ind>
+                    <dep>0.153</dep>
+                    </entry>
+		    <entry>
+                    <ind>1</ind>
+                    <dep>0.23</dep>
+                    </entry>
+            </interpolation>
+            <axis>
+              <x>0</x>
+              <y>0</y>
+              <z>1</z>
+            </axis>
+        </animation>
+
+
+	<!--
+	<ind>0</ind> <dep>0</dep>
+	<ind>0.044</ind> <dep>5</dep>
+	<ind>0.087</ind> <dep>10</dep>
+	<ind>0.129</ind> <dep>15</dep>
+	<ind>0.171</ind> <dep>20</dep>
+	<ind>0.211</ind> <dep>25</dep>
+	<ind>0.250</ind> <dep>30</dep>
+	<ind>0.287</ind> <dep>35</dep>
+	<ind>0.321</ind> <dep>40</dep>
+	<ind>0.354</ind> <dep>45</dep>
+	<ind>0.383</ind> <dep>50</dep>
+	<ind>0.433</ind> <dep>60</dep>
+	<ind>0.470</ind> <dep>70</dep>
+	<ind>0.482</ind> <dep>80</dep>
+	<ind>0.500</ind> <dep>90</dep>
+	-->
+
+
+<!--Course 0.35  compression max -0.12 min +0.23-->
+        <animation>
+            <type>rotate</type>
+            <object-name>ARDTrain-BielleSup</object-name>
+            <object-name>ARDTrain-BielleInf</object-name>
+            <property>gear/gear[1]/compression-norm</property>
+	    <interpolation>
+                    <entry>
+                    <ind>0.0</ind>
+                    <dep>-13</dep>
+                    </entry>
+		    <entry>
+                    <ind>0.17</ind>
+                    <dep>0.00</dep>
+                    </entry>
+		    <entry>
+                    <ind>0.250</ind>
+                    <dep>12</dep>
+                    </entry>
+		    <entry>
+                    <ind>0.50</ind>
+                    <dep>24</dep>
+		    </entry>
+		    <entry>
+                    <ind>0.750</ind>
+                    <dep>34</dep>
+                    </entry>
+		    <entry>
+                    <ind>1</ind>
+                    <dep>45</dep>
+                    </entry>
+            </interpolation>
+            <center>
+                    <x-m>1.17699</x-m>
+                    <y-m>0</y-m>
+                    <z-m>-1.00412</z-m>
+		</center>
+            <axis>
+                  <x>0</x>
+                  <y>-1</y>
+                  <z>0</z>
+            </axis>
+        </animation>
+
+        <animation>
+            <type>rotate</type>
+            <object-name>ARDTrain-BielleInf</object-name>
+            <property>gear/gear[1]/compression-norm</property>
+            <interpolation>
+                    <entry>
+                    <ind>0.0</ind>
+                    <dep>26</dep>
+                    </entry>
+		    <entry>
+                    <ind>0.17</ind>
+                    <dep>0.00</dep>
+                    </entry>
+		    <entry>
+                    <ind>0.250</ind>
+                    <dep>-24</dep>
+                    </entry>
+		    <entry>
+                    <ind>0.50</ind>
+                    <dep>-48</dep>
+		    </entry>
+		    <entry>
+                    <ind>0.750</ind>
+                    <dep>-68</dep>
+                    </entry>
+		    <entry>
+                    <ind>1</ind>
+                    <dep>-90</dep>
+                    </entry>
+            </interpolation>
+            <center>
+                    <x-m>1.37578</x-m>
+                    <y-m>0</y-m>
+                    <z-m>-1.10922</z-m>
+		</center>
+            <axis>
+                  <x>0</x>
+                  <y>-1</y>
+                  <z>0</z>
+            </axis>
+        </animation>
+
+
+
+
+
+
+
+
+
+
+
+</PropertyList>
